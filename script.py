@@ -25,10 +25,12 @@ def launch_browser(search_query):
 	for br in range(3):
 		if platform.system() == "Windows":
 			subprocess.Popen(['msedge', search_query], creationflags=subprocess.CREATE_NO_WINDOW)
-			#os.system(f"start msedge {search_query} &")  # Для Edge
+			# Для Edge на Windows
+			time.sleep(1)
+			# Задержка 1 секунда
 		else:
 			subprocess.Popen(['firefox', search_query], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-			#os.system(f"firefox {search_query} &")  # Для Firefox на Linux
+			# Для Firefox на Linux
 			time.sleep(1)
 			# Задержка 1 секунда
 			return()
